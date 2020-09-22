@@ -297,6 +297,7 @@ target=500
 tot=0
 num_cluster=20
 gene_list = list()
+clust = spat_cor_netw_DT$cor_clusters$spat_netw_clus
 for(i in seq(1, num_cluster)){
 	gene_list[[i]] = colnames(t(clust[which(clust==i)]))
 }

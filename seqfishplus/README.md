@@ -65,7 +65,7 @@ SS_seqfish <- adjustGiottoMatrix(gobject = SS_seqfish, expression_values = c('no
 ## visualize
 spatPlot(gobject = SS_seqfish, save_param = list(save_name = '2_spatplot'))
 ```
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/2_spatplot.png)
+![](2_spatplot.png)
 
 ### Highly variable genes (HVG)
 ```R
@@ -74,7 +74,7 @@ SS_seqfish <- calculateHVG(gobject = SS_seqfish, method = 'cov_loess', differenc
 gene_metadata = fDataDT(SS_seqfish)
 featgenes = gene_metadata[hvg == 'yes' & perc_cells > 4 & mean_expr_det > 0.5]$gene_ID
 ```
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/3_a_HVGplot.png)
+![](3_a_HVGplot.png)
 
 ### PCA, UMAP, tSNE
 ```R
@@ -90,16 +90,16 @@ plotTSNE(gobject = SS_seqfish,save_param = list(save_name = '3_e_tSNE_reduction'
 ```
 
 3_b_screeplot.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/3_b_screeplot.png)
+![](3_b_screeplot.png)
 <br>
 3_c_PCA_reduction.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/3_c_PCA_reduction.png)
+![](3_c_PCA_reduction.png)
 <br>
 3_d_UMAP_reduction.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/3_d_UMAP_reduction.png)
+![](3_d_UMAP_reduction.png)
 <br>
 3_e_tSNE_reduction.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/3_e_tSNE_reduction.png)
+![](3_e_tSNE_reduction.png)
 
 
 ### Nearest neighbor network and clustering
@@ -121,10 +121,10 @@ plotUMAP(gobject = SS_seqfish,cell_color = 'sub_leiden_clus_select', cell_color_
 ```
 
 4_a_UMAP_leiden.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/4_a_UMAP_leiden.png)
+![](4_a_UMAP_leiden.png)
 <br>
 4_b_UMAP_leiden_subcluster.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/4_b_UMAP_leiden_subcluster.png)
+![](4_b_UMAP_leiden_subcluster.png)
 
 
 
@@ -135,10 +135,10 @@ showClusterDendrogram(SS_seqfish, h = 0.5, rotate = T, cluster_column = 'sub_lei
 ```
 
 4_c_heatmap.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/4_c_heatmap.png)
+![](4_c_heatmap.png)
 <br>
 4_d_dendro.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/4_d_dendro.png)
+![](4_d_dendro.png)
 
 
 ### Visualize spatial and expression spaces
@@ -152,10 +152,10 @@ group_colors = c('red', 'green', 'blue', 'purple'); names(group_colors) = groups
 spatDimPlot(gobject = SS_seqfish, cell_color = 'sub_leiden_clus_select', dim_point_size = 2, spat_point_size = 2,select_cell_groups = groups_of_interest, cell_color_code = group_colors,save_param = list(save_name = '5_b_covis_leiden_selected'))
 ```
 5_a_covis_leiden.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/5_a_covis_leiden.png)
+![](5_a_covis_leiden.png)
 <br>
 5_b_covis_leiden_selected.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/5_b_covis_leiden_selected.png)
+![](5_b_covis_leiden_selected.png)
 
 ### Cell type marker gene detection
 
@@ -172,10 +172,10 @@ topgenes_gini2 = gini_markers_subclusters[, head(.SD, 6), by = 'cluster']
 plotMetaDataHeatmap(SS_seqfish, selected_genes = unique(topgenes_gini2$genes), custom_gene_order = unique(topgenes_gini2$genes),custom_cluster_order = unique(topgenes_gini2$cluster),metadata_cols = c('sub_leiden_clus_select'), x_text_size = 10, y_text_size = 10,save_param = c(save_name = '6_b_metaheatmap_gini'))
 ```
 6_a_violinplot_gini.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/6_a_violinplot_gini.png)
+![](6_a_violinplot_gini.png)
 <br>
 6_b_metaheatmap_gini.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/6_b_metaheatmap_gini.png)
+![](6_b_metaheatmap_gini.png)
 
 
 ### Cell type annotation
@@ -197,10 +197,10 @@ violinPlot(gobject = SS_seqfish, genes = unique(topgenes_gini$genes),strip_text 
 spatDimPlot(gobject = SS_seqfish, cell_color = 'cell_types',dim_point_size = 2, spat_point_size = 2, dim_show_cluster_center = F, dim_show_center_label = T,save_param = c(save_name = '7_b_covisualization'))
 ```
 7_a_violinplot.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/7_a_violinplot.png)
+![](7_a_violinplot.png)
 <br>
 7_b_covisualization.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/7_b_covisualization.png)
+![](7_b_covisualization.png)
 
 
 ```R
@@ -213,10 +213,10 @@ plotHeatmap(gobject = SS_seqfish,cluster_color_code = cell_type_colors,genes = g
 ```
 
 7_c_heatmap.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/7_c_heatmap.png)
+![](7_c_heatmap.png)
 <br>
 7_d_heatmap_selected.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/7_d_heatmap_selected.png)
+![](7_d_heatmap_selected.png)
 
 ### Spatial grid
 ```R
@@ -224,7 +224,7 @@ SS_seqfish <- createSpatialGrid(gobject = SS_seqfish,sdimx_stepsize = 500,sdimy_
 spatPlot(gobject = SS_seqfish, show_grid = T, point_size = 1.5,save_param = c(save_name = '8_a_grid'))
 ```
 8_a_grid.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/8_a_grid.png)
+![](8_a_grid.png)
 
 ### Spatial network
 
@@ -254,16 +254,16 @@ spatPlot(gobject = subSS_seqfish, show_network = T,network_color = 'blue', spati
 ```
 
 9_a_spatial_network_delaunay.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/9_a_spatial_network_delaunay.png)
+![](9_a_spatial_network_delaunay.png)
 <br>
 9_b_spatial_network_k3.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/9_b_spatial_network_k3.png)
+![](9_b_spatial_network_k3.png)
 <br>
 9_c_spatial_network_k10.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/9_c_spatial_network_k10.png)
+![](9_c_spatial_network_k10.png)
 <br>
 9_d_spatial_network_dist.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/9_d_spatial_network_dist.png)
+![](9_d_spatial_network_dist.png)
 
 ### Spatial genes
 
@@ -276,7 +276,7 @@ spatGenePlot(SS_seqfish, expression_values = 'scaled', genes = km_spatialgenes[1
 ```
 
 10_a_spatialgenes_km.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/10_a_spatialgenes_km.png)
+![](10_a_spatialgenes_km.png)
 
 #### Spatial genes co-expression modules  
 ```R
@@ -303,13 +303,13 @@ spatCellPlot(SS_seqfish,spat_enr_names = 'cluster_metagene',cell_annotation_valu
 ```
 
 10_b_spatialcoexpression_heatmap.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/10_b_spatialcoexpression_heatmap.png)
+![](10_b_spatialcoexpression_heatmap.png)
 <br>
 10_c_spatialcoexpression_rank.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/10_c_spatialcoexpression_rank.png)
+![](10_c_spatialcoexpression_rank.png)
 <br>
 10_d_spatialcoexpression_metagenes.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/10_d_spatialcoexpression_metagenes.png)
+![](10_d_spatialcoexpression_metagenes.png)
 
 
 ### HMRF spatial domains
@@ -331,7 +331,7 @@ spatPlot(gobject = SS_seqfish, cell_color = 'HMRF_2_k9_b.28', point_size = 3, co
 ```
 
 11_HMRF_2_k9_b.28.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/11_HMRF_2_k9_b.28.png)
+![](11_HMRF_2_k9_b.28.png)
 
 
 
@@ -357,19 +357,19 @@ spatPlot(SS_seqfish, cell_color = 'astro_olig_ints',select_cell_groups =  c('oth
 ```
 
 12_a_barplot_cell_cell_enrichment.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/12_a_barplot_cell_cell_enrichment.png)
+![](12_a_barplot_cell_cell_enrichment.png)
 <br>
 12_b_heatmap_cell_cell_enrichment.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/12_b_heatmap_cell_cell_enrichment.png)
+![](12_b_heatmap_cell_cell_enrichment.png)
 <br>
 12_c_network_cell_cell_enrichment.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/12_c_network_cell_cell_enrichment.png)
+![](12_c_network_cell_cell_enrichment.png)
 <br>
 12_d_network_cell_cell_enrichment_self.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/12_d_network_cell_cell_enrichment_self.png)
+![](12_d_network_cell_cell_enrichment_self.png)
 <br>
 12_e_cell_cell_enrichment_selected.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/12_e_cell_cell_enrichment_selected.png)
+![](12_e_cell_cell_enrichment_selected.png)
 
 
 
@@ -396,10 +396,10 @@ plotICG(gobject = SS_seqfish,cpgObject = CPGscoresHighGenes,source_type = 'endot
 ```
 
 13_a_CPG_dotplot.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/13_a_CPG_dotplot.png)
+![](13_a_CPG_dotplot.png)
 <br>
 13_b_ICG_barplot.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/13_b_ICG_barplot.png)
+![](13_b_ICG_barplot.png)
 
 ### Cell neighborhood: ligand-receptor cell-cell communication
 ```R
@@ -431,13 +431,13 @@ plotRecovery(gobject = SS_seqfish,comb_comm,expr_rnk_column = 'exprPI_rnk',spat_
 ```
 
 14_a_communication_dotplot.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/14_a_communication_dotplot.png)
+![](14_a_communication_dotplot.png)
 <br>
 14_b_expr_vs_spatial_activity.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/14_b_expr_vs_spatial_activity.png)
+![](14_b_expr_vs_spatial_activity.png)
 <br>
 14_c_spatial_recovery_activity.png <br>
-![](/home/qzhu/Downloads/github/sample.dset/seqfish_plus/14_c_spatial_recovery_activity.png)
+![](14_c_spatial_recovery_activity.png)
 
 
 ### Export Giotto Analyzer to Viewer
